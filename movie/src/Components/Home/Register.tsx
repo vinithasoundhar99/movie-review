@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Navbar from './Navbar';
 import {register} from "../../Action/User";
 import { useDispatch } from 'react-redux';

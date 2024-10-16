@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -40,7 +40,7 @@ const movieDetails = {
 
 const ViewMovieDetails = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const [rating, setRating] = useState('');
+  const [rating, setRating] = useState<number>(0);
   const [review, setReview] = useState('');
 
   const settings = {
@@ -104,9 +104,9 @@ const ViewMovieDetails = () => {
   const handleSubmit = async () => {
     console.log("Rating:", rating);
     console.log("Review:", review);
-    await dispatch(GiveRating(id, userInfo?._id, rating, review) as any);
+    await dispatch(GiveRating(id, userInfo?._id, rating.toString(), review) as any);
     setModalOpen(false);
-    setRating(''); 
+    setRating(0); 
     setReview(''); 
   };
 
@@ -161,17 +161,17 @@ const ViewMovieDetails = () => {
     <div className="bg-white p-5 rounded-lg">
       <h3 className="text-lg font-bold">Rate the Movie</h3>
       <div className="flex mt-2">
-        {[1, 2, 3, 4, 5].map((star:number) => (
-          <span
-            key={star}
-            onClick={() => setRating(star)}
-            onMouseEnter={() => setRating(star)}
-            // onMouseLeave={() => setRating(0)}
-            className={`cursor-pointer text-2xl ${star <= rating ? 'text-yellow-500' : 'text-gray-400'}`}
-          >
-            ★
-          </span>
-        ))}
+      {[1, 2, 3, 4, 5].map((star: number) => (
+                <span
+                key={star}
+                onClick={() => setRating(star)}
+                onMouseEnter={() => setRating(star)}
+                className={`cursor-pointer text-2xl ${star <= (typeof rating === 'string' ? Number(rating) : rating) ? 'text-yellow-500' : 'text-gray-400'}`}
+              >
+                ★
+              </span>
+              
+              ))}
       </div>
       <textarea
         value={review}
