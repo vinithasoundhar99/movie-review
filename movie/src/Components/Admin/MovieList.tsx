@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
-import { useDispatch,useSelector } from 'react-redux';
-import { ViewMovie,updateMovie,deleteMovie } from '../../Action/Admin';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { ViewMovie, deleteMovie } from '../../Action/Admin';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -27,7 +27,7 @@ const MovieList = () => {
 
 const dispatch = useDispatch();
 
-const [movieId,setmovieId] = React.useState('');
+// const [movieId,setmovieId] = React.useState('');
 
 
 

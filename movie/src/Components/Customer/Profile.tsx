@@ -1,15 +1,15 @@
-import React from 'react';
+// import React from 'react';
 import Customernavbar from './Customernavbar';
 
 const Profile = () => {
     // Dummy profile data
-    const userProfile = {
-        name: "Jane Doe",
-        email: "jane.doe@example.com",
-        phone: "+1234567890",
-        address: "456 Elm St, Metropolis, USA",
-        image: "https://via.placeholder.com/150", // Replace with actual image URL if available
-    };
+    // const userProfile = {
+    //     name: "Jane Doe",
+    //     email: "jane.doe@example.com",
+    //     phone: "+1234567890",
+    //     address: "456 Elm St, Metropolis, USA",
+    //     image: "https://via.placeholder.com/150", // Replace with actual image URL if available
+    // };
 
     const user = JSON.parse(localStorage.getItem('userInfo') || '{}');
 

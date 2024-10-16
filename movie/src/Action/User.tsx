@@ -8,7 +8,6 @@ import {registerRequest , registerSuccess, registerFail, loginRequest, loginSucc
 } from "../Slice/User";
 import {Dispatch} from "redux";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import {toast} from 'react-toastify'
 
 

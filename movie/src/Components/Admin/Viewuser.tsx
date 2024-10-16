@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import { useState,useEffect } from 'react';
 
 import { getusers } from '../../Action/Admin';
 import { useDispatch, useSelector } from 'react-redux';

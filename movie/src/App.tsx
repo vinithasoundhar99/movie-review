@@ -1,5 +1,3 @@
-import React from 'react'
-import Navbar from './Components/Home/Navbar';
 import MainHomepage from './Components/Home/MainHomepage';
 import LoginComponent from './Components/Home/LoginComponent';
 import Register from './Components/Home/Register';
